@@ -1,0 +1,13 @@
+import pandas as pd
+import seaborn as sns
+
+# 1. Load the dataset automatically
+data = sns.load_dataset('iris')
+
+# 2. Explore the data
+print(data.head())
+data.info()
+print(data.describe())
+
+# 3. Calculate correlation (excluding the categorical 'species' column)
+print(data.drop(columns=['species']).corr())
